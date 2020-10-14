@@ -4,6 +4,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import Gaara from '../assets/img/gaara.jpg'
+import Hinata from '../assets/img/hinata.jpg'
+
 
 const Chat = (props) => {
   const isQuestion = (props.type === 'question');
@@ -12,7 +15,11 @@ const Chat = (props) => {
   return (
     <ListItem className={classes}>
       <ListItemAvatar>
-        <Avatar alt="icon" src="/static/images/avatar/1.jpg" />
+        {isQuestion ? (
+          <Avatar alt="icon" src={Gaara} />
+        ) : (
+          <Avatar alt="icon" src={Hinata} />
+        )}
       </ListItemAvatar>
       <div className="p-chat__bubble">{props.text}</div>
     </ListItem>
