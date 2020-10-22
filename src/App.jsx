@@ -5,11 +5,11 @@ import {FormDialog} from "./components/Forms/index";
 import {db} from './firebase/index'
 
 const App = () => {
-  const[answers, setAnswers] = useState([]);
-  const[chats, setChats] = useState([]);
-  const[currentId, setCurrentId] = useState("init");
-  const[dataset, setDataset] = useState({});
-  const[open, setOpen] = useState(false);
+  const [answers, setAnswers] = useState([]);
+  const [chats, setChats] = useState([]);
+  const [currentId, setCurrentId] = useState("init");
+  const [dataset, setDataset] = useState({});
+  const [open, setOpen] = useState(false);
 
   const displayNextQuestion = (nextQuestionId, nextDataset) => {
     addChats({
@@ -88,7 +88,7 @@ const App = () => {
       <div className="c-box">
         <Chats chats={chats}/>
         <AnswersList answers={answers} select={selectAnswer}/>
-        <FormDialog open={open}　handleClose={handleClose} />
+        <FormDialog open={open} handleClose={handleClose} />
       </div>
     </section>
   );
